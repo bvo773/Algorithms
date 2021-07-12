@@ -4,25 +4,28 @@ public class Main {
 
     public static void main(String args[]) {
         System.out.println("Hello World");
-            //21 -> 12
+
+        // 243
         ListNode node2 = new ListNode(2);
-        ListNode node1 = new ListNode(1);
+        ListNode node1 = new ListNode(4);
+        ListNode node3 = new ListNode(3);
         
         node2.next = node1;
+        node1.next = node3;
         ListNode L1 = node2;
 
-        //43 -> 34
-        ListNode node4 = new ListNode(4);
-        ListNode node3 = new ListNode(3);
+        // 564
+        ListNode node4 = new ListNode(5);
+        ListNode node5 = new ListNode(6);
+        ListNode node6 = new ListNode(4);
 
-        node4.next = node3;
+        node4.next = node5;
+        node5.next = node6;
         ListNode L2  = node4;
 
         
-        int[] arr2 = putNodeValueToArray(getListNodeLength(L2), L2);
-        //System.out.println(arrayToInteger(arr2));
-
-        int[] arr1 = putNodeValueToArray(getListNodeLength(L1), L1);
+        int[] arr2 = putReverseNodeValueToArray(getListNodeLength(L2), L2);
+        int[] arr1 = putReverseNodeValueToArray(getListNodeLength(L1), L1);
 
         int x = arrayToInteger(arr1);
         int y = arrayToInteger(arr2); 
@@ -30,39 +33,54 @@ public class Main {
         int z = x + y;
         String zS = Integer.toString(z);
         
-        System.out.println(z);
+        System.out.println(zS);
         System.out.println();
-        ListNode answer = putValueIntoNode(zS);
+        
 
         System.out.println();
-        //printListtNode(answer);
+        printListtNode(putValueIntoNode(zS));
+
+
 
     }
-    public static ListNode putValueIntoNode(String s) {
-        ListNode curr = new ListNode();
-        
-        for(int i = s.length()-1; i >= 0; i--) {
-        
-            //System.out.println(s.charAt(0));
-            //System.out.println(s.charAt(1));
-            int val = Character.getNumericValue(s.charAt(i));
-            ListNode node = new ListNode(val);
-            while (curr)
 
-        
-            //System.out.println(val);
-         
-        }
-        return curr;
+
+    public static ListNode putValueIntoNode(String s) {
+        ListNode listNode = new ListNode();
+
+         for(int i = s.length()-1; i >= 0; i--) {
+             if (listNode.next == null && listNode.val == 0 ) {
+                 int val = Character.getNumericValue(s.charAt(i));
+                 ListNode firstNode = new ListNode(val);
+                 listNode = firstNode;
+             }
+             else {
+                 ListNode curr = listNode;
+                 while (curr != null) {
+                    if (curr.next == null) {
+                        int val = Character.getNumericValue(s.charAt(i));
+                        curr.next = new ListNode(val);
+                        break;
+                    }
+                    else{
+                        curr = curr.next;
+                    }
+                 }
+             }
+         }
+        return listNode;
     }
 
     public static void printListtNode(ListNode listNode) {
         ListNode curr = listNode;
         while (curr != null) {
-            System.out.println("NodeAdd: " + listNode.next);
-            System.out.println("Value: " + listNode.val);
+            System.out.println("Node Address: " + curr);
+            System.out.println("Node Value: "  + curr.val);
+            System.out.println("Next Node Addresss:  " + curr.next);
             curr = curr.next;
+            System.out.println();
         }
+        
     
     }
     public static int getListNodeLength(ListNode listNode) {
@@ -75,7 +93,7 @@ public class Main {
         return length;
     }
 
-    public static int[] putNodeValueToArray(int length, ListNode listNode) {
+    public static int[] putReverseNodeValueToArray(int length, ListNode listNode) {
         ListNode curr = listNode;
         int[] arr = new int[length];
         while (curr != null) {
