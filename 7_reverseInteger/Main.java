@@ -49,7 +49,7 @@ public class Main{
 
     }
     public static void main(String[] args) {
-        System.out.println(reverse(9646324351));
+        System.out.println(reverse(-7887778));
 
        
     }
