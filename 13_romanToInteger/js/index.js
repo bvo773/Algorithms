@@ -57,9 +57,9 @@ var romanToInt = function(s) {
 	const numeralValues = [];
 
 	for (let i = 0; i < s.length; i++) {
-	let element = s[i];
-	const romanNumeralObj = new RomanNumeral(element);
-	numeralValues[i] = romanNumeralObj;
+		let element = s[i];
+		const romanNumeralObj = new RomanNumeral(element);
+		numeralValues[i] = romanNumeralObj;
 	}
 
 
