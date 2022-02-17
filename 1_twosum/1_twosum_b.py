@@ -55,3 +55,8 @@ def main():
 
 if __name__ == "__main__":
   main()
+
+
+# Next time we meet things to do
+# Review code, Review Hashmap (Dictionary) do more problems
+# Sunday 9 PM EST
