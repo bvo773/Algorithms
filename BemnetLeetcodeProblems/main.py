@@ -1,3 +1,14 @@
+# Given an array, find the max contiguous(next to each other) sub array with length K
+# [1,5,3,0,0,4,0,1]
+# K = 3
+
+# [1,5,3] = 9
+# [5,3,0] = 8
+# [3,0,0] = 3
+# [0,0,4] = 4
+# [0,4,0] = 4
+# [4,0,1] = 5
+
 ''' 
 Given an array, find the max contiguous(next to each other) sub array with length K
 
@@ -29,7 +40,31 @@ loop through len(array):
 [0,4,0] = 4
 [4,0,1] = 5
 
-    
+
+
+'''
+'''
+# [1,5,3,0,0,4,0,1]
+#          [    ]
+
+# K = 3
+
+
+1 + 5 + 3 + 0 + 0 + 4 + 0 + 1
+1 + 5 + 3 = 9
+    5 + 3 + 0 = 9 - 1 + 0 = 8
+        3 + 0 + 0 = 8 - 5 + 0 = 3
+            0 + 0 + 4 = 3 - 3 + 4 = 4
+                0 + 4 + 0 = 4 - 0 + 0 = 4
+                    4 + 0 + 1 = 4 - 0 + 1 = 5
+
+
+# [1,5,3] = 9 
+# [5,3,0] = 8 = 9 - 1 + 0
+# [3,0,0] = 3 = 8 - 5 + 0
+# [0,0,4] = 4
+# [0,4,0] = 4
+# [4,0,1] = 5
 '''
 
 def findMaxContiguous(nums, k):
@@ -37,13 +72,15 @@ def findMaxContiguous(nums, k):
   resultList = [None] * k
   
   i = 0
-  while i + k < len(nums):
+
+  #(n-k)k = O(nk)
+  while i + k < len(nums): 
     subList = nums[i : i + k]
     sumList = sum(subList)
 
     if sumList > currentMaxSum:
       # Update result list if the sum of list is greater than currentMaxSum
-      for i in range(len(resultList)):
+      for i in range(len(resultList)): # k times
         resultList[i] = subList[i]
 
       # Update current max sum  
@@ -53,7 +90,47 @@ def findMaxContiguous(nums, k):
 
   return resultList
 
+def findMaxContiguous2(nums, k):
+  currentMaxSum = -1
+  totalSum = 0
+  # find sum of the first k ints
+  for i in range(0, k):
+    totalSum += nums[i]
+
+  # Update current max sum if the sum of sublist is greater than previous calculated list
+  if totalSum > currentMaxSum:
+    currentMaxSum = totalSum
+  
+  # for the rest of the array
+  for j in range(k, len(nums)):
+    totalSum -= nums[j-k]
+    totalSum += nums[j]
+
+    if totalSum > currentMaxSum:
+      currentMaxSum = totalSum
+  
+  return currentMaxSum
+
+
+def findMaxContiguous3(nums, k):
+  currentMaxSum = float('-inf')
+  totalSum = 0
+
+  totalSum = sum(nums[:k])
+  
+  if totalSum > currentMaxSum:
+    currentMaxSum = totalSum
+  
+  for j in range(k, len(nums)):
+    totalSum = totalSum - nums[j-k]
+    totalSum = totalSum + nums[j]
+
+    if totalSum > currentMaxSum:
+      currentMaxSum = totalSum
+
+  return currentMaxSum
+
 inputList = [1,5,3,0,0,4,0,1]
 k = 4
 
-print(findMaxContiguous(inputList, k))
+print(findMaxContiguous2(inputList, k))
