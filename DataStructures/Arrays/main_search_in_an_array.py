@@ -6,7 +6,7 @@ We simply go the given index and check whether or not the element is there.
 '''
 
 '''
-Linear Search
+LINEAR SEARCH
 - If the index is not known, which is the case most of the time, then we can check every element in the Array.
 - We continue checking elements until we find the element we are looking for, or we reach the end of the Array.
 - Linear search: a technique to for finding an element by checking through all elements one by one
@@ -50,6 +50,21 @@ for i in range(6):
   arr[length] = i
   length += 1
 
+# As expected we were able to find the element 4 in the array, but not 30.
 print(f"Does the array contain the element 4? - {linearSearch(array=arr, length=length, element=4)}")
 print(f"Does the array contain the element 30? - {linearSearch(array=arr, length=length, element=30)}")
 
+'''
+BINARY SEARCH
+- If elements in the Array are in sorted order, then we can use binary search.
+- Binary search is where we repeatedly look at the middle element in the Array, and determine
+whether the element we are looking for must be to the left, or to the right.
+- Each time we do this, we're able to halve the number of elements we still need to search, making binary search a lot faster than
+linear search!
+
+- Downside of binary search though it only works if the data is sorted.
+- If we need to perform a single search, it is faster to do linear search, as it takes longer to sort than to linear search
+- If we are performing a lot of searches, it is often worth sorting the data first so we can use binary search for the repeated searches.
+- Read and learn more in depth about binary search
+https://leetcode.com/explore/learn/card/binary-search/
+'''

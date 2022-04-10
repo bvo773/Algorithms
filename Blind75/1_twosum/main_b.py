@@ -22,7 +22,10 @@ class Solution:
         else:
           i += 1
 
-# Time complexity: O(n)
+# Time complexity: O(n) 
+# Algo: For each element, we check for the other pair that adds up to the target in a dictionary
+# If the other pair exist, we get its index
+# Key: element | Value: index
 # Space complexity: O(n) because you're adding the element in the dictionary
     def twoSum2(self, nums, target):
       indices = []
@@ -32,9 +35,9 @@ class Solution:
         
         other = target - nums[i]
         if other in numsDict:
-          index = numsDict[other]      
+          otherIndex = numsDict[other]      
           indices.append(i)
-          indices.append(index)
+          indices.append(otherIndex)
           break
         
         # We add element if the other pair doesn't exist

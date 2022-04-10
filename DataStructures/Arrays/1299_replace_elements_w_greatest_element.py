@@ -1,4 +1,5 @@
-
+# Time complexity: O(N^2)
+# Space complexity: O(N)
 def replaceElements(arr):
   N = len(arr)
   # for each index, we calculate the max element to the right 

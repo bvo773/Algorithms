@@ -1,3 +1,4 @@
+# Time Complexity: O (N)
 def numOfSubarrays(arr, k, threshold):
   # find sum of the first k ints
     
@@ -5,6 +6,7 @@ def numOfSubarrays(arr, k, threshold):
   for i in range(0, k):
     totalSum += arr[i]
   
+  # totalSum = sum([:k])
   intAverage = int(totalSum/k)
   counter = 0
   
