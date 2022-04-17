@@ -52,7 +52,7 @@ def subArraySum(nums, k):
 
 nums = [1, -1, 1]
 k = 1
-print(subArraySum2(nums, k))
+#print(subArraySum(nums, k))
 
 # Bem's solution for O(N^3)
 # Review, Trace
@@ -132,26 +132,9 @@ def subArraySumBem(nums, k):
 
   return counter
 
-# O(N^3) -> O(N^)
-# [1 -1 1]
-'''
-k = 1
-S = [1 -1 1]
+# O(N^3) -> O(N^2)
 
-subSize = 1
-S = nums[0:1] = 1
-subSizeStart = 0
-S == k -> counter += 1
- 0  1  2
-[1 -1 1]
-S = 1
-S = nums[subSizeStart+subSize] - nums[subSizeStart] = nums[0+1] - nums[0] = -1 - 1 = -2
-S != k
 
-subSize = 1
-subSizeStart = 1
-
-'''
 def subArraySumBem2(nums, k):
   counter = 0
   for subSize in range(1, len(nums)):
@@ -166,3 +149,7 @@ def subArraySumBem2(nums, k):
       counter += 1
 
   return counter
+
+
+arr = [1, -2, 3]
+print(subArraySumBem2(arr, k=1))

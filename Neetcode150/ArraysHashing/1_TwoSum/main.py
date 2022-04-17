@@ -34,6 +34,8 @@ target = 4 - num1 = num2
 '''
 
 class Solution(object):
+  # Time Complexity: O(N^2)
+  # Space Complexity: O(1)
   def twoSum(self, nums, target):
     i = 0
     sumIndices = []
