@@ -60,3 +60,77 @@ Amen, when the lord is blocking out the troubles, we do sleep welly as we dwell 
 
 Luke 19:38
 “Blessings on the King who comes in the name of the Lord ! Peace in heaven, and glory in highest heaven!”
+
+
+A tree is a frequently-used data structure to simulate a hierarchical tree structure.
+
+Each node of the tree will have a root value and a list of references to other nodes which are called child nodes. From graph view, a tree can also be defined as a directed acyclic graph which has N nodes and N-1 edges.
+
+A Binary Tree is one of the most typical tree structure. As the name suggests, a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child.
+
+By completing this card, you will be able to:
+
+Understand the concept of a tree and a binary tree;
+Be familiar with different traversal methods;
+Use recursion to solve binary-tree-related problems;
+
+
+“Haven’t you ever read what King David and his men did when they were hungry? They entered the house of God  when Abiathar was high priest and ate the sacred bread of God’s presence.  They violated the law by eating bread that only the priests were allowed to eat. But there is one here who is even greater than the temple.”
+
+Mark 2:25-26
+
+What a great verse Jesus said
+
+Mark 3 14-15
+He appointed  the Twelve, whom he named apostles.  He wanted them to be continually at his side as his friends, and so that he could send them out to preach and have authority to heal the sick and to cast out demons.
+
+Amen, for we are called to walk together and preach the gospel the good news about jesus, so everyone can come to the kingdom of God before the end of time and he comes back. lol im kinda scared but excited to think about it. 
+
+John 11:25-26. Jesus said to her, “I am the resurrection and the life. The one who believes in me will live, even though they die; and whoever lives by believing in me will never die. Do you believe this?”
+
+
+SPEND TWO HOURS 
+
+4/13/22
+Then he said to them, “My soul is overwhelmed with sorrow to the point of death. Stay here and keep watch with me.”
+
+Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.
+
+1 Peter 4:16
+
+Amen, happy day 0 basi, hope you had a good week of research :D 
+
+4/14/22
+Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.
+
+Acts 4:12
+
+4/16/22
+He is not here; he has risen, just as he said. Come and see the place where he lay.
+
+Matthew 28:6
+
+4/17/22
+He isn’t here he has risen victoriously, just as he said! Come inside the tomb and see the place where our Lord was lying.
+
+Matthew 28:6
+
+
+For “Everyone who calls on the name of the Lord will be saved.”
+Romans 10:13
+
+Amen, save us Lord and have mercy. Happy Tuesday Basi!
+
+4/20/22
+Now that I, your Lord and Teacher, have washed your feet, you also should wash one another’s feet.
+
+John 13:14
+
+The next day John saw Jesus coming toward him and said, “Look, the Lamb of God, who takes away the sin of the world!
+
+John 1:29
+
+4/25/22
+Jesus told him, “I am the way, the truth, and the life. No one can come to the Father except through me.
+
+John 14:6

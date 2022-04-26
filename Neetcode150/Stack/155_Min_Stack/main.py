@@ -25,15 +25,18 @@ class MinStack:
       self.stack.pop()
       self.minStack.pop()
       self.size -= 1
-  
+      
   def top(self) -> int:
     if self.stack:
       return self.stack[-1]
       
+
   def getMin(self) -> int:
     if self.minStack:
-      return self.minStack.pop()
+      return self.minStack[-1]
 
 
 solution = MinStack()
-solution.push(1)
+print(solution.getMin())
+print(solution.minStack)
+print(solution.stack)

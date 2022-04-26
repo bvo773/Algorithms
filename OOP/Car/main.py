@@ -10,9 +10,10 @@ class Car:
   def getYear(self):
     return f"Year: {self.year}"
 
-
+'''
 emptyCar = Car()
 toyotaCar = Car(model = "Toyota Rav4", year = 2018)
 
 print(f"Model: {emptyCar.getModel()} | Year: {emptyCar.getYear()}")
 print(f"Model: {toyotaCar.getModel()}| Year: {toyotaCar.getYear()}")
+'''

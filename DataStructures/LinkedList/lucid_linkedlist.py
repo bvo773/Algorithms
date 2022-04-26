@@ -19,7 +19,6 @@ class LinkedList:
       print(f'|{curr.data}|{curr.next}')
       curr = curr.next
 
-
   def append(self, data):
     newNode = Node(data)
     #if list is empty

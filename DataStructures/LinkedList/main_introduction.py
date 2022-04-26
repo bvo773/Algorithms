@@ -62,5 +62,4 @@ Therefore, you can insert a new node into a linked list O(1) time complexity, wh
 AN EXAMPLE
 # See OneNote
 
-Let's insert a new value 9 after the second node 6.
 '''

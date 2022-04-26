@@ -10,7 +10,7 @@ class Solution:
     
     countS, countT = {}, {}
     
-    # For each char, everytime we see that char we increment the count by on e
+    # For each char, everytime we see that char we increment the count by 1
     for i in range(len(s)):
       countS[s[i]] = 1 + countS.get(s[i], 0)
       countT[t[i]] = 1 + countT.get(t[i], 0)
