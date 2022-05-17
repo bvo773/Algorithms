@@ -6,42 +6,60 @@ class TreeNode:
 
 
 '''
-Given a binary tree, determine if 
+Given a binary tree, determine if a binary tree is balanced.
+Definition: A binary tree is balanced if, for every node, the height of the left and right subtree differ by at most one.
 '''
-def is_balanced():
-  pass
+def is_balanced(root):
+  if not root:
+    return True
+  
+  height_left = tree_height(root.left)
+  height_right = tree_height(root.right)
+  difference = abs(height_left - height_right)
+  if difference <= 1:
+    is_root_balanced = True
+  else:
+    is_root_balanced = False
 
-# number of steps/edges to the leaf node
+  is_left_subtree_balanced = is_balanced(root.left)
+  is_right_subtree_balanced = is_balanced(root.right)
+  return (is_root_balanced and is_left_subtree_balanced and is_right_subtree_balanced)
+
+''' 
+Write a function to calculate number of steps/edges to the leaf node or the maximum depth of a tree
+'''
 def tree_height(root):
   if root == None:
     return 0
 
-  left = tree_height(root.left)
-  right = tree_height(root.right)
-  max_height = max(left, right)
-  return 1 + max_height
+  height_left = tree_height(root.left)
+  height_right = tree_height(root.right)
+  return 1 + max(height_left, height_right)
 
+'''
+Write a function that checks if a binary tree is a binary search tree. 
+'''
+
+def is_binary_search_tree(root):
+  def recurse(root, minimum, maximum):
+    if not root:
+      return True
+    is_val_in_interval = (root.val > minimum and root.val < maximum)
+    if is_val_in_interval:
+      check_left = recurse(root.left, minimum, root.val)
+      check_right = recurse(root.right, root.val, maximum)
+      return check_left and check_right
+    else:
+      return False
+  
+  return recurse(root, float("-inf"), float("inf"))
+
+
+
+'''
 node3 = TreeNode(3, None, None)
 node2 = TreeNode(1, None, None)
 root = TreeNode(2, left = node2, right = node3)
-print(tree_height(root))
-
+print(is_binary_search_tree(root))
 '''
-tree_height(root) 
-  left = tree_height(root.left) -> 1
-    left = tree_height(root.left) -> None 
-      return 0
-    right = tree_height(root.right) -> None
-      return 0
-    return max(left, right) + 1 -> 1
 
-
-  right = tree_height(root.right) -> 1
-    left = tree_height(root.left) -> None
-      return 0
-    right = tree_height(root.right) -> None
-      return 0
-    return max(left, right) + 1 -> 1
-
-  return max(left, right) + 1 -> 2
-'''
