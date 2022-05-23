@@ -29,6 +29,14 @@ def is_balanced(root):
   is_right_subtree_balanced = is_balanced(root.right)
   return (is_root_balanced and is_left_subtree_balanced and is_right_subtree_balanced)
 
+def is_binary_search_tree(root):
+  def recurse(root, minimum, maximum):
+    if not root:
+      return True
+
+    is_val_in_interval = (root.val >= minimum and root.val <= maximum)
+    pass
+  
 node6 = TreeNode(6, None, None)
 node5 = TreeNode(5, None, None)
 node0 = TreeNode(0, None, node5)
