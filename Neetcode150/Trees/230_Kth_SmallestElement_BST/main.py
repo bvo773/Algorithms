@@ -13,11 +13,6 @@ def print_inorder(root):
   print(root.val)
   print_inorder(root.right)
 
-node4 = TreeNode(4, None, None)
-node2 = TreeNode(2, None, None)
-node1 = TreeNode(1, None, node2)
-root = TreeNode(3, node1, node4)
-#print_inorder(root)
 
 class Solution:
   def kthSmallest(self, root, k):
@@ -34,6 +29,27 @@ class Solution:
     
     result =  recurse(root, res)
     return result[k-1]
+
+  def kthSmallestIterative(self, root, k):
+    stack = []
+    curr = root
+    n = 0
+
+    while curr or stack:
+      while curr:
+        stack.append(curr)
+        curr = curr.left
+      curr = stack.pop()
+      n += 1
+      if n == k:
+        return curr.val
+      
+      curr = curr.right
+    
+node4 = TreeNode(4, None, None)
+node2 = TreeNode(2, None, None)
+node1 = TreeNode(1, None, node2)
+root = TreeNode(3, node1, node4)
 
 sol = Solution()
 print(sol.kthSmallest(root, 1))
