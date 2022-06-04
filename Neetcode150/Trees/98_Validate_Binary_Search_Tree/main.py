@@ -28,3 +28,7 @@ class Solution:
         return (is_root_valid and check_left and check_right)
       
       return recurse(root, float('-inf'), float('inf'))
+
+    def isValidBSTNC(self, root):
+      pass
+    

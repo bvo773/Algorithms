@@ -15,7 +15,11 @@ def print_inorder(root):
 
 
 class Solution:
-  def kthSmallest(self, root, k):
+  '''
+  Time Complexity: O(N) to build a traversal by visiting every node
+  Space Complexity: O(N) to keep an inorder traversal
+  '''
+  def kthSmallestRecursive(self, root, k):
     res = []
     
     def recurse(root, res):
@@ -30,16 +34,31 @@ class Solution:
     result =  recurse(root, res)
     return result[k-1]
 
+
+  '''
+  Time complexity:
+    Leetcode:
+      O(H + k), where H is a tree height. This complexity is defined by the stack, which contains at least H + k elements,
+      since before starting to pop out one has to go down to a leaf. This results in O(log N + k)for the balanced tree and O(N + k) 
+      for completely unbalanced tree with all the nodes in the left subtree.
+
+    Bem:
+      Since we are visiting every element in the tree one by one, worst case, O(N). Best case O(1), Average Case O(K)
+
+  Space complexity: 
+    Leetcode: 
+       O(H) to keep the stack, where H is a tree height. That makes O(N) in the worst case of the skewed tree, and O(log N) in the average case of the balanced tree.
+  '''
   def kthSmallestIterative(self, root, k):
     stack = []
     curr = root
     n = 0
 
     while curr or stack:
-      while curr:
+      while curr: # go as far left as we can and add the values into the stack
         stack.append(curr)
         curr = curr.left
-      curr = stack.pop()
+      curr = stack.pop() # base case
       n += 1
       if n == k:
         return curr.val
@@ -52,4 +71,8 @@ node1 = TreeNode(1, None, node2)
 root = TreeNode(3, node1, node4)
 
 sol = Solution()
-print(sol.kthSmallest(root, 1))
+print(sol.kthSmallestIterative(root, 5))
+
+
+
+
