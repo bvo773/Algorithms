@@ -24,17 +24,14 @@ def print_inorder(root):
 # Space Compexity: O(1)
 class Solution:
   def lowestCommonAncestor(self, root, p, q):
-    curr = root
-    while curr:
-      curr = root
-      
-      while curr:
-        if p.val < curr.val and q.val < curr.val: # p and q are in the left subtree
-          curr = curr.left
-        elif p.val > curr.val and q.val > curr.val: # p and q are in the right subtree
-          curr = curr.right
-        else:
-          return curr # we found the split of the common ancestor
+    cur = root
+    while cur:
+      if p.val < cur.val and q.val < cur.val: # p and q are in the left subtree
+        cur = cur.left
+      elif p.val > cur.val and q.val > cur.val: # p and q are in the right subtree
+        cur = cur.right
+      else:
+        return cur # we found the split of the common ancestor
 
   def lca(self, root, node1, node2):
     if not root:

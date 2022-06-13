@@ -18,7 +18,7 @@ class Solution:
       qLen = len(q)
       level = []
       for i in range(qLen):
-        node = q.popleft()
+        node = q.popleft() # when pop, we have to add its children
         if node:
           level.append(node.val)
           q.append(node.left)
