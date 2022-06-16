@@ -29,7 +29,7 @@ class Solution:
       
       return recurse(root, float('-inf'), float('inf'))
 
-    # Runtime O(N)
+    # Runtime O(N) - Fast
     def isValidBSTNC(self, root):
       def valid(node, mini, maxi):
         if not node:

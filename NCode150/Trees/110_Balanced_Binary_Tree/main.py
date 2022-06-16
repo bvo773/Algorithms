@@ -36,4 +36,25 @@ class Solution:
       return 0
     
     return 1 + max(self.tree_height(root.left), self.tree_height(root.right))
-      
+  
+
+
+  def isBalanced2(self, root: Optional[TreeNode]) -> bool:
+    if not root:
+        return True
+    
+    left = self.height(root.left)
+    right = self.height(root.right)
+    
+    if abs(left - right) <= 1: is_root_balanced = True
+    else: is_root_balanced = False
+    
+
+    return is_root_balanced and self.isBalanced(root.left) and self.isBalanced(root.right)
+
+
+def height2(self, root):
+    if not root:
+        return 0
+    
+    return 1 + max(self.height(root.left), self.height(root.right))

@@ -29,7 +29,7 @@ class Solution:
       self.isSubtree(s.right, t))
 
 
-    def sameTree(self, s, t):
+    def sameTree(self, s, t): 
       # if both trees are empty
       if not s and not t:
         return True

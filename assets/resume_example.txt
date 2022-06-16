@@ -1,0 +1,19 @@
+An example would be helping the partners customize a script(Using powershell or bash) to deploy cloud resources(network, storage, VM) based on the partners environments.
+	- For example, if the partner like to extends the disk size on their virtual machines. We can help automate to deploy a script the extends the size of the VM based on the given parameters to help with effiency.
+	- Another example is when the partner VM system is down, which mean their application is down, I would assist in helping the partner recover their system on our cloud by automating a script to remove the disks of the current virtual machine and virtualize a new virtual machine with the same resources from the affected machine.
+	- Or 
+
+
+
+	Airroom architects
+	- At the time, I was working on an android project to help develop an android application to sort data for marketing, sales, and accounting department to reflect the companies daily operations. The companies was an architecture company that consult housing solutions.
+	- For example, sorting the sales number by daily, weeks, or months in different department. 
+	- Within this experience, I learned about how to structure data in JSON format and we can use JSON object to interacts with the componenets. 
+	- And different design patterns to reduce the complexity of the architecture.
+	- I was also exposed to UI development where I helped design the user sign up and login page. 
+	
+
+
+
+
+

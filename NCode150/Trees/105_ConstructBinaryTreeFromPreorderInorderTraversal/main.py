@@ -41,9 +41,23 @@ class Solution:
     #then we find position of it in the inorder array, the value tells us how many values we want in the left subtree
     mid = inorder.index(preorder[0])
     # then we build the left subtree, starting at index 1 since we already build the root node up to mid + 1, in python mid + 1 is not inclusive, basically from 1 to mid
-    root.left = self.buildTree(preorder[1:mid + 1, inorder[:mid]])
+    root.left = self.buildTree(preorder[1 : mid + 1], inorder[ :mid])
     # then we build the right subtree, every values from from the right of mid until the endo the array
-    root.right = self.buildTree(preorder[mid + 1:], inorder[mid+1:])
+    root.right = self.buildTree(preorder[mid + 1:], inorder[mid + 1:])
+    return root
+
+  def buildTreeTrace(self, preorder, inorder):
+    if not preorder or not inorder:
+      return None
+    
+    root = TreeNode(preorder[0])
+    print(f"Creating Node: {preorder[0]}\n")
+    mid = inorder.index(preorder[0])
+    print(f"Mid: {mid}\n")
+    print(f"Left Subtree Partition | Preorder: {preorder[1 : mid + 1]} | Inorder: {inorder[ :mid]}\n")
+    root.left = self.buildTreeTrace(preorder[1:mid + 1], inorder[:mid])
+    print(f"Right Subtree Parition | Preorder: {preorder[mid + 1: ]} | Inorder: {inorder[mid + 1 : ]}\n")
+    root.right = self.buildTreeTrace(preorder[mid+1:], inorder[mid+1:])
     return root
 
 
@@ -71,20 +85,29 @@ def post_order(root):
   post_order(root.right)
   print(root.val, end=' ')
 
+sol = Solution()
+preorder = [3,9,20,15,7]
+inorder = [9,3,15,20,7]
+tree = sol.buildTreeTrace(preorder, inorder)
+pre_order(tree)
+
+
+
 node7 = TreeNode(7, None, None)
 node15 = TreeNode(15, None, None)
 node20 = TreeNode(20, node15, node7)
 node9 = TreeNode(9, None, None)
 root = TreeNode(3, node9, node20)
 
-print("PRE-ORDER TRAVERSAL")
-pre_order(root)
-print()
 
-print("IN-ORDER TRAVERSAL")
-in_order(root)
-print()
+# print("PRE-ORDER TRAVERSAL")
+# pre_order(root)
+# print()
 
-print("POST-ORDER TRAVERSAL")
-post_order(root)
-print()
+# print("IN-ORDER TRAVERSAL")
+# in_order(root)
+# print()
+
+# print("POST-ORDER TRAVERSAL")
+# post_order(root)
+# print()

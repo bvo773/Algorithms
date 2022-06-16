@@ -17,4 +17,17 @@ class Solution:
     
     return result
   
+  # [1 2 4] target = 3
+  # Time Complexity: O(N), we are visiting each element once in nums and check the difference
+  # Space Compelxity: O(N), we are storing the prev value and index in a hash map so we can access it O(1) time for the
+  # difference in value
+  def twoSumNC(self, nums, target):
+    prev_map = {}
+
+    for index, value in enumerate(nums):
+      diff = target - value
+      if diff in prev_map:
+        return [prev_map[diff], index]
+      prev_map[value] = index
+    return
   

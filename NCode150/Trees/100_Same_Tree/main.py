@@ -28,16 +28,20 @@ class Solution:
     
     return (is_root_same and is_left_subtree_same and is_right_subtree_same)
 
-node3_p = TreeNode(3, None, None)
-node1_p = TreeNode(1, None, None)
-root_p = TreeNode(2, node1_p, node3_p)
 
-node3_q = TreeNode(3, None, None)
-node1_q = TreeNode(1, None, None)
-root_q = TreeNode(2, node1_p, node3_p)
+  # FAST 
+  def isSameTree2(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    if not p and not q:
+        return True
+    
+    if p and q and p.val == q.val:
+        return(self.isSameTree(p.left, q.left) and
+                self.isSameTree(p.right, q.right))
+    
+    return False
 
-sol = Solution()
 
-print(sol.isSameTree(root_p, root_q))
+  
+
 
 
