@@ -54,8 +54,8 @@ def in_order(root):
   print(root.val, end = " ")
   in_order(root.right)
 
-preorder = [3,9,20,15,7]
-inorder = [9,3,15,20,7]
+preorder = [1, 2, 3, 4, 4, 3, 2]
+inorder = [4, 3, 4, 2, 3,1 ,2]
 sol = Solution()
 tree = sol.buildTree(preorder, inorder)
 in_order(tree)

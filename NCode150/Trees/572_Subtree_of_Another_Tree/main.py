@@ -6,7 +6,8 @@ A subtree of a binary tree tree is a tree that consists of a node in tree and al
 The tree tree could also be considered as a subtree of itself.
 
 
-Time Compelexity: O (S * T), size of both trees together, for every single position in S, we compare that subtree to the entire T tree
+Time Compelexity: O (S * T), size of both trees multiply together, for every single position in S, we compare that subtree to the entire T tree
+Space Complexity: O(S * T), 
 '''
 
 # Definition for a binary tree node.

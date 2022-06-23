@@ -1,42 +1,34 @@
+"""
+All functions run in O(1) time :)
+  push(val)
+  pop()
+  top()
+  getMin()
+"""
+
 class MinStack:
 
   def __init__(self):
     self.stack = []
     self.minStack = []
-    self.size = 0
-      
       
   def push(self, val: int) -> None:
-    
-    if not self.minStack: #if the min stack is empty, we just add the val
-      self.minStack.append(val)
-    else:
-      if val < self.minStack[-1]:
-        self.minStack.append(val)
-      else:
-        self.minStack.append(self.minStack[-1])
-
     self.stack.append(val)
-    self.size += 1
-  
-
+    #if stack is not empty, compare the val and the top value of the minstack to keep track of the current min, 
+    # else if stack is empty initially compare it to the val itself
+    val = min(val, self.minStack[-1] if self.minStack else val) 
+    self.minStack.append(val)
+    
+  # We pop both stacks
   def pop(self) -> None:
-    if self.stack and self.minStack:
-      self.stack.pop()
-      self.minStack.pop()
-      self.size -= 1
-      
+    self.stack.pop()
+    self.minStack.pop()
+
+  # only be call when our stack is non-empty, so we dont have to take care of the edge case if it is empty
   def top(self) -> int:
-    if self.stack:
-      return self.stack[-1]
+    return self.stack[-1]
       
 
   def getMin(self) -> int:
-    if self.minStack:
-      return self.minStack[-1]
+    return self.minStack[-1]
 
-
-solution = MinStack()
-print(solution.getMin())
-print(solution.minStack)
-print(solution.stack)

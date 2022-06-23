@@ -21,5 +21,7 @@ def removeElement(nums, val):
         k += 1
     
   return k
+
+  
         
   
