@@ -5,12 +5,17 @@ import collections
 #         self.val = val
 #         self.left = left
 #         self.right = right
+class TreeNode:
+  def __init__(self, val, left = None, right = None):
+    self.val = val
+    self.left = left
+    self.right = right
 class Solution:
     
   # Time Complexity: O(N), visiting every node at each level once
   # Space Comlexity: O(N/2) -> O(N), for each level, the maxinum number of nodes in our queue will hold is n/2
   # Algorithm: Breadth First Search Level Order Traversal
-  def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+  def levelOrder(self, root):
     result = [] # to store our sublists result at each level
     q = collections.deque() # Our queue - FIFO - append right, pop left
     q.append(root) 
@@ -29,3 +34,6 @@ class Solution:
             
     return result
 
+root = TreeNode(7, None, None)
+solution = Solution()
+solution.levelOrder(root)

@@ -15,7 +15,7 @@ class TreeNode:
   def __init__(self, val = 0, left = None, right = None):
     self.val = val
     self.left = left
-    self.right = right
+    self.right = right 
 class Solution:
     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
       if not t: return True # if the T tree is empty, it will be a a subtree of S regardless

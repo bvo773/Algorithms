@@ -7,13 +7,13 @@ For this problem, a height-balanced binary tree is defined as:
 '''
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 class Solution:
-  def isBalanced(self, root: Optional[TreeNode]) -> bool:
+  def isBalanced(self, root) -> bool:
     if not root:
       return True
     
@@ -39,22 +39,38 @@ class Solution:
   
 
 
-  def isBalanced2(self, root: Optional[TreeNode]) -> bool:
-    if not root:
-        return True
-    
-    left = self.height(root.left)
-    right = self.height(root.right)
-    
-    if abs(left - right) <= 1: is_root_balanced = True
-    else: is_root_balanced = False
-    
+  def isBalanced2(self, root) -> bool:
+      if not root:
+          return True
+      
+      left_height = self.tree_height(root.left)
+      right_height = self.tree_height(root.right)
+      root_balanced = True if abs(left_height - right_height) <= 1 else False
+  
+      return root_balanced and self.isBalanced(root.left) and self.isBalanced(root.right)
+  
+  def isBalancedNC(self, root):
+    def dfs(root):
+      if not root:
+        return [True, 0]
+      
+      left = dfs(root.left)
+      right = dfs(root.right)
+      balanced = (left[0] and right[0] and abs(left[1] - right[1]) <= 1)
+      return [balanced, 1 + max(left[1], right[1])]
 
-    return is_root_balanced and self.isBalanced(root.left) and self.isBalanced(root.right)
-
-
-def height2(self, root):
-    if not root:
-        return 0
-    
-    return 1 + max(self.height(root.left), self.height(root.right))
+    return dfs(root)[0]
+"""
+        4
+      /  \
+     2    7
+    /\
+   1  3    
+"""
+node7 = TreeNode(7, None, None)
+node3 = TreeNode(3, None, None)
+node1 = TreeNode(1, None, None)
+node2 = TreeNode(2, node1, node3) 
+root = TreeNode(4, node2, node7)
+sol = Solution()
+sol.isBalanced2(root)

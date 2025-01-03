@@ -31,7 +31,7 @@ class Solution:
 
   # FAST 
   def isSameTree2(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-    if not p and not q:
+    if not p and not q:ha
         return True
     
     if p and q and p.val == q.val:

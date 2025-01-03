@@ -243,3 +243,35 @@ Revelation 4:11
 And my God will meet all your needs according to the riches of his glory in Christ Jesus.
 
 Philippians 4:19
+
+
+def function_to_test(i):
+  # function to test
+
+tests = [
+  (expected_input_1, expected_output_1),
+  (expected_input_2, expected_output_2),
+  ...
+]
+
+for t in tests:
+  provided_input, output = t[0], t[1]
+  assert(function_to_test(expected_input) == output)
+
+# slightly better way
+
+for i, t in enumerate(tests):
+  provided_inpa\ut, expected_output = t[0], t[1]
+  actual_output = function_to_test(expected_input)
+  assert(actual_output == expected_output, f"test case {i} is not valid. Actual {actual_output} expected {expected_output}")
+
+
+          cur = root
+        
+        while cur:
+            if p.val > cur.val and q.val > cur.val:
+                cur = cur.right
+            elif p.val < cur.val and q.val < cur.val:
+                cur = cur.left
+            else:
+                return cur

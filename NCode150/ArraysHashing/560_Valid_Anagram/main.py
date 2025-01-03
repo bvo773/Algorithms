@@ -15,11 +15,8 @@ class Solution:
       countS[s[i]] = 1 + countS.get(s[i], 0)
       countT[t[i]] = 1 + countT.get(t[i], 0)
     
-    for ch in countS:
-      if countS.get(ch) != countT.get(ch, 0):
-        return False
   
-    return True
+    return countS == countT
     
     # Solution 2: We can sort the strings and compare them if they are equal to reduce space complexity
     # Usually interviewer assume sorting doesn't take extra space

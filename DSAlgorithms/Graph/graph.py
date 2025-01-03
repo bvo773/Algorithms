@@ -24,4 +24,4 @@ def depthFirstPrintIterative(graph, source):
 
 # param: graph - the graph of nodes | source - starting node to begin traversal
 # recursively - don't need to explicit create a stack since recursion uses the "underlying call stack"! 
-depthFirstPrint(graph, 'A')
+depthFirstPrintIterative(graph, 'A')

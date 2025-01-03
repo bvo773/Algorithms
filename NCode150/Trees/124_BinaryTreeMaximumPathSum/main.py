@@ -24,6 +24,36 @@ Example 2:
 Input: root = [-10, 9, 20, null, null, 15, 7] 
 Output: 42
 Explanation: The optimal path is 15 ->20->7 with a path sum 15 -> 20 -> 7 with a path sum of 15+20+7 = 42
+
+
+ALGORITHM
+We understand a path can be defined 4 following ways.
+
+A node by itself is a path.
+    [9]
+
+A node going/splitting left
+    [20]
+    /
+  [15]
+
+A node going/splitting right
+    [20]
+       \
+       [7]
+
+A node spltting boths way, basically starting from left or right and crossing through the root node
+    [20]
+    /  \
+  [15] [7]
+
+ALGORITHM
+For each node we calculate all 4 of these paths and we keep a maxPath variable to keep track the most optimal path out of these 4 
+paths.
+
+RUNTIME
+Time Complexity: O(N), we traverse each node once to check what is its maxPath out of all the 4 paths.
+Space Complexity: O(H), where H is the height of the tree for our recursive call stack, and O(N) worse case if the tree is unbalanced
 """
 class TreeNode:
   def __init__(self, val, left = None, right = None):

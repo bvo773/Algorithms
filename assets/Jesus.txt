@@ -1,0 +1,48 @@
+Those who belong to Christ Jesus have crucified the flesh with its passions and desires.
+
+Galatians 5:24
+
+
+Let all that I am praise the Lord ; may I never forget the good things he does for me.
+
+Psalms 103:2
+
+Proverbs 16:7. When the Lord takes pleasure in anyone’s way, he causes their enemies to make peace with them.
+
+1100
+-500
+====
+
+600
+-
+
+27 - Remove Element [Array]
+merge
+
+931 - Valid Mountain Array [Array]
+
+206 - Reverse Linked List [Linked List]
+
+Everywhere—from east to west— praise the name of the Lord .
+
+Psalms 113:3 (NLT)
+
+
+"We now have this light shining in our hearts, but we ourselves are like fragile clay jars containing this great treasure. This makes it clear that our great power is from God, not from ourselves. We are pressed on every side by troubles, but we are not crushed. We are perplexed, but not driven to despair. We are hunted down but never abandoned by God. We get knocked down, but we are not destroyed" 
+
+2 Cor 4:7-9
+
+"Always be full of joy in the Lord. I say it again—rejoice!" 
+
+Php 4:4
+
+When you are faced with despair, troubles, and crises in life, remember to "give all your worries and cares to God, for he cares about you" 
+1 Peter 5:7
+
+
+You will see that "God causes everything to work together for the good of those who love God and are called according to his purpose for them" 
+
+Romans 8:28
+
+O(h) means complexity linear dependent on tree height. If tree is balanced this asymptotic becomes O(logn) (n - number of elements). But it is not true for all trees. Imagine very unbalanced binary tree where each node has only left child, this tree become similar to list and number of elements in that tree equal to height of tree. Complexity for described operation will be O(n) instead of O(logn)
+🎵I need you to hold on..heaven 🌎 is a place not too far away 🎶.... progressive drops
