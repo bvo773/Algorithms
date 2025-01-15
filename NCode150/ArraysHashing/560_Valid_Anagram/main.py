@@ -1,4 +1,5 @@
 class Solution:
+  
   def isAnagram(self, s: str, t: str) -> bool:
     # Solution 1: Count the characters of in the given string and see 
     # if the other string has the same characters and occurences using an Array or HashMap
