@@ -1,1 +1,12 @@
+#macOS specific files
 .DS_Store
+
+# Editor directories
+.vscode/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+#Build artifacts
+*.dSYM/
