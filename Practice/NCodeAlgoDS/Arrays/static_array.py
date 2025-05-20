@@ -6,7 +6,7 @@
 
 ''' Reading from an Array'''
 # initialize array
-myArray = [1, 3, 5]
+myArray = [1, 3, 5, None, None]
 
 # access an arbritary element, where i is the index of the desired value, O(1) complexity
 #myArray[i]
@@ -31,7 +31,7 @@ For example, with an array of size 10 we would have to perform 10 operations to 
 with an array of size 100 we would have to perform 100 operations, and so on.
 '''
 
-'''Deleting from an Array'''
+'''DELETING FROM AN ARRAY'''
 '''Deleting from the end of an array'''
 # Remove from the last postion in the array if the array
 # is not empty (i.e length is non-zero)
@@ -39,7 +39,8 @@ def removeEnd(arr, length):
     if length > 0:
         arr[length-1] = 0
 
-'''Deleting at an ith index
+'''
+DELETING AT ith index
     1. We are give the index i.
     2. We iterate starting from i + 1 until the end of the array
     3. We shift each element to the left
@@ -70,4 +71,27 @@ print(f"{myArray}")
 def insertEnd(arr, n, length, capacity):
     if length < capacity:
         arr[length] = n
-'''Since we are writing a single value to the array, the time complexity is O(1)'''
+
+'''
+   Since we are writing a single value to the array, the time complexity is O(1)
+   Note: length is the number of elements inside the array whereas capacity refers to the maximum number of elements the array can hold
+'''
+
+'''
+INSERTING AT THE ith index
+    consider arr = [4, 5, 6] -> insert at index i = 1, i = 0
+    cannot overwrite original value, instead we shift all values
+    starting at index i, one position to the right
+'''
+
+# Insert n into index i after shifting elements to the right
+# Assuming i is a valid index and arr is not full
+def insertMiddle(arr, i, n, length):
+    for index in range(length - 1, i - 1, -1):
+        arr[index + 1] = arr[index]
+
+    arr[i] = n
+
+print(myArray)
+insertMiddle(myArray, 1, 2, 3)
+print(myArray)
